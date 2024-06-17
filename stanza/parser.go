@@ -56,8 +56,6 @@ func NextPacket(p *xml.Decoder) (Packet, error) {
 		return nil, err
 	}
 
-	fmt.Println("--- DEBUG -------", t)
-
 	if ee, ok := t.(xml.EndElement); ok {
 		return decodeStream(p, ee)
 	}
@@ -171,6 +169,7 @@ func decodeSASL(p *xml.Decoder, se xml.StartElement) (Packet, error) {
 
 // decodeClient decodes all known packets in the client namespace.
 func decodeClient(p *xml.Decoder, se xml.StartElement) (Packet, error) {
+	fmt.Println("---- debug_decode_client: element:", se)
 	switch se.Name.Local {
 	case "message":
 		return message.decode(p, se)
