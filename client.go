@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/xml"
 	"errors"
+	"fmt"
 	"io"
 	"net"
 	"sync"
@@ -336,9 +337,8 @@ func (c *Client) Send(packet stanza.Packet) error {
 // The provided context should have a timeout to prevent the client from waiting
 // forever for an IQ result. For example:
 //
-//   ctx, _ := context.WithTimeout(context.Background(), 30 * time.Second)
-//   result := <- client.SendIQ(ctx, iq)
-//
+//	ctx, _ := context.WithTimeout(context.Background(), 30 * time.Second)
+//	result := <- client.SendIQ(ctx, iq)
 func (c *Client) SendIQ(ctx context.Context, iq *stanza.IQ) (chan stanza.IQ, error) {
 	if iq.Attrs.Type != stanza.IQTypeSet && iq.Attrs.Type != stanza.IQTypeGet {
 		return nil, ErrCanOnlySendGetOrSetIq
@@ -382,9 +382,10 @@ func (c *Client) recv(keepaliveQuit chan<- struct{}) {
 	defer close(keepaliveQuit)
 
 	for {
-		val, err := stanza.NextPacket(c.transport.GetDecoder())
+		decoder := c.transport.GetDecoder()
+		val, err := stanza.NextPacket(decoder)
 		if err != nil {
-			c.ErrorHandler(err)
+			c.ErrorHandler(fmt.Errorf("transport: %v, decoder: %v, error: %v", c.transport, decoder, err))
 			c.disconnected(c.Session.SMState)
 			return
 		}
