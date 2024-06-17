@@ -169,7 +169,6 @@ func decodeSASL(p *xml.Decoder, se xml.StartElement) (Packet, error) {
 
 // decodeClient decodes all known packets in the client namespace.
 func decodeClient(p *xml.Decoder, se xml.StartElement) (Packet, error) {
-	fmt.Println("---- debug_decode_client: element:", se)
 	switch se.Name.Local {
 	case "message":
 		return message.decode(p, se)
@@ -178,6 +177,7 @@ func decodeClient(p *xml.Decoder, se xml.StartElement) (Packet, error) {
 	case "iq":
 		return iq.decode(p, se)
 	default:
+		fmt.Println("---- debug_decode_client:", se.Name, se.Attr)
 		return nil, errors.New("unexpected XMPP packet " +
 			se.Name.Space + " <" + se.Name.Local + "/>")
 	}
