@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"io"
 
-	"gosrc.io/xmpp/stanza"
+	"github.com/ryblovAV/go-xmpp/stanza"
 )
 
 // Credential is used to pass the type of secret that will be used to connect to XMPP server.

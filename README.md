@@ -106,7 +106,7 @@ import (
 	"os"
 
 	"gosrc.io/xmpp"
-	"gosrc.io/xmpp/stanza"
+	"github.com/ryblovAV/go-xmpp/stanza"
 )
 
 func main() {

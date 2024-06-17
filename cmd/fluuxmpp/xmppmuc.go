@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/bdlm/log"
 
+	"github.com/ryblovAV/go-xmpp/stanza"
 	"gosrc.io/xmpp"
-	"gosrc.io/xmpp/stanza"
 )
 
 func joinMUC(c xmpp.Sender, toJID *stanza.Jid) error {

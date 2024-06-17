@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/bdlm/log"
 
+	"github.com/ryblovAV/go-xmpp/stanza"
 	"gosrc.io/xmpp"
-	"gosrc.io/xmpp/stanza"
 )
 
 func send(c xmpp.Sender, recipient []string, msgText string) {

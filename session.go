@@ -4,7 +4,7 @@ import (
 	"encoding/xml"
 	"errors"
 	"fmt"
-	"gosrc.io/xmpp/stanza"
+	"github.com/ryblovAV/go-xmpp/stanza"
 	"strconv"
 )
 

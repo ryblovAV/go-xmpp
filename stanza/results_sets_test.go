@@ -1,7 +1,7 @@
 package stanza_test
 
 import (
-	"gosrc.io/xmpp/stanza"
+	"github.com/ryblovAV/go-xmpp/stanza"
 	"testing"
 )
 

@@ -1,5 +1,6 @@
 // Can be launched with:
-//   ./xmpp_jukebox -jid=test@localhost/jukebox -password=test -address=localhost:5222
+//
+//	./xmpp_jukebox -jid=test@localhost/jukebox -password=test -address=localhost:5222
 package main
 
 import (
@@ -12,8 +13,8 @@ import (
 
 	"github.com/processone/mpg123"
 	"github.com/processone/soundcloud"
+	"github.com/ryblovAV/go-xmpp/stanza"
 	"gosrc.io/xmpp"
-	"gosrc.io/xmpp/stanza"
 )
 
 // Get the actual song Stream URL from SoundCloud website song URL and play it with mpg123 player.

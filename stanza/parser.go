@@ -9,10 +9,11 @@ import (
 
 // Reads and checks the opening XMPP stream element.
 // TODO It returns a stream structure containing:
-// - Host: You can check the host against the host you were expecting to connect to
-// - Id: the Stream ID is a temporary shared secret used for some hash calculation. It is also used by ProcessOne
-//       reattach features (allowing to resume an existing stream at the point the connection was interrupted, without
-//       getting through the authentication process.
+//   - Host: You can check the host against the host you were expecting to connect to
+//   - Id: the Stream ID is a temporary shared secret used for some hash calculation. It is also used by ProcessOne
+//     reattach features (allowing to resume an existing stream at the point the connection was interrupted, without
+//     getting through the authentication process.
+//
 // TODO We should handle stream error from XEP-0114 ( <conflict/> or <host-unknown/> )
 func InitStream(p *xml.Decoder) (sessionID string, err error) {
 	for {
@@ -54,6 +55,8 @@ func NextPacket(p *xml.Decoder) (Packet, error) {
 	if err != nil {
 		return nil, err
 	}
+
+	fmt.Println("--- DEBUG -------", t)
 
 	if ee, ok := t.(xml.EndElement); ok {
 		return decodeStream(p, ee)

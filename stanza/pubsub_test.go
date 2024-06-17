@@ -3,7 +3,7 @@ package stanza_test
 import (
 	"encoding/xml"
 	"errors"
-	"gosrc.io/xmpp/stanza"
+	"github.com/ryblovAV/go-xmpp/stanza"
 	"strings"
 	"testing"
 )

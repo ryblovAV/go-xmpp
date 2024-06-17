@@ -124,7 +124,7 @@ package myclient
 import (
 	"encoding/xml"
 
-	"gosrc.io/xmpp/stanza"
+	"github.com/ryblovAV/go-xmpp/stanza"
 )
 
 type CustomPayload struct {

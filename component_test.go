@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"gosrc.io/xmpp/stanza"
+	"github.com/ryblovAV/go-xmpp/stanza"
 )
 
 // Tests are ran in parallel, so each test creating a server must use a different port so we do not get any
@@ -367,7 +367,7 @@ func TestStreamManagerDisconnect(t *testing.T) {
 //=============================================================================
 // Basic XMPP Server Mock Handlers.
 
-//===============================
+// ===============================
 // Init mock server and connection
 // Creating a mock server and connecting a Component to it. Initialized with given port and handler function
 // The Component and mock are both returned

@@ -7,7 +7,7 @@ import (
 	"encoding/xml"
 	"errors"
 	"fmt"
-	"gosrc.io/xmpp/stanza"
+	"github.com/ryblovAV/go-xmpp/stanza"
 	"io"
 )
 
@@ -178,9 +178,8 @@ func (c *Component) sendWithWriter(writer io.Writer, packet []byte) error {
 // The provided context should have a timeout to prevent the client from waiting
 // forever for an IQ result. For example:
 //
-//   ctx, _ := context.WithTimeout(context.Background(), 30 * time.Second)
-//   result := <- client.SendIQ(ctx, iq)
-//
+//	ctx, _ := context.WithTimeout(context.Background(), 30 * time.Second)
+//	result := <- client.SendIQ(ctx, iq)
 func (c *Component) SendIQ(ctx context.Context, iq *stanza.IQ) (chan stanza.IQ, error) {
 	if iq.Attrs.Type != stanza.IQTypeSet && iq.Attrs.Type != stanza.IQTypeGet {
 		return nil, ErrCanOnlySendGetOrSetIq

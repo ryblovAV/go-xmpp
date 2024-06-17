@@ -9,11 +9,12 @@ import (
 	"strings"
 	"time"
 
-	"gosrc.io/xmpp/stanza"
+	"github.com/ryblovAV/go-xmpp/stanza"
 )
 
 // TODO: Should I move this as an extension of the client?
-//    I should probably make the code more modular, but keep concern separated to keep it simple.
+//
+//	I should probably make the code more modular, but keep concern separated to keep it simple.
 type ServerCheck struct {
 	address string
 	domain  string

@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/ryblovAV/go-xmpp/stanza"
 	"gosrc.io/xmpp"
-	"gosrc.io/xmpp/stanza"
 )
 
 func main() {

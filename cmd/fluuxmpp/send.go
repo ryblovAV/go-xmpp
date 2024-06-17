@@ -2,7 +2,7 @@ package main
 
 import (
 	"bufio"
-	"gosrc.io/xmpp/stanza"
+	"github.com/ryblovAV/go-xmpp/stanza"
 	"os"
 	"strings"
 	"sync"

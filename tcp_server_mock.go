@@ -3,13 +3,13 @@ package xmpp
 import (
 	"encoding/xml"
 	"fmt"
-	"gosrc.io/xmpp/stanza"
+	"github.com/ryblovAV/go-xmpp/stanza"
 	"net"
 	"testing"
 	"time"
 )
 
-//=============================================================================
+// =============================================================================
 // TCP Server Mock
 const (
 	defaultTimeout       = 2 * time.Second
