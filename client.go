@@ -386,8 +386,8 @@ func (c *Client) recv(keepaliveQuit chan<- struct{}) {
 		val, err := stanza.NextPacket(decoder)
 		if err != nil {
 			c.ErrorHandler(fmt.Errorf("transport: %v, decoder: %v, error: %v", c.transport, decoder, err))
-			c.disconnected(c.Session.SMState)
-			return
+			//c.disconnected(c.Session.SMState)
+			continue
 		}
 
 		// Handle stream errors
