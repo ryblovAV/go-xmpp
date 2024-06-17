@@ -1,4 +1,4 @@
-module xmpp
+module github.com/ryblovAV/go-xmpp
 
 go 1.13
 
